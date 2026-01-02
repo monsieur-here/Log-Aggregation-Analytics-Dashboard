@@ -1,0 +1,13 @@
+# Java - Spring Boot
+backend/target/
+backend/.mvn/
+*.jar
+
+# React - NodeJS
+frontend/node_modules/
+frontend/build/
+frontend/dist
+
+# Docker and OS
+.DS_Store
+.env
