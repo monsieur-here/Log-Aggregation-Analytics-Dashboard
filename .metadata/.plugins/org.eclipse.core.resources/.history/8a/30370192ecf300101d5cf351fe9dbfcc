@@ -1,0 +1,11 @@
+package com.log_analytics.logProcessor.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.log_analytics.logProcessor.service.LogEntryDetails;
+
+@Repository
+public interface LogRepository extends JpaRepository<LogEntryDetails, Long>{
+	
+}
