@@ -1,13 +1,20 @@
-# Java - Spring Boot
-backend/target/
-backend/.mvn/
-*.jar
+# IDE specific files
+.settings/
+.classpath
+.project
+.sts4-cache/
+.vscode/
+.idea/
+*.iml
 
-# React - NodeJS
-frontend/node_modules/
-frontend/build/
-frontend/dist
-
-# Docker and OS
+# OS files
+Thumbs.db
 .DS_Store
+
+# Ignore Build files
+target/
+node_modules/
+
+# Environment files
 .env
+/.metadata/
