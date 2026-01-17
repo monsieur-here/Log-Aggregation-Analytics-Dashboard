@@ -1,0 +1,20 @@
+# IDE specific files
+.settings/
+.classpath
+.project
+.sts4-cache/
+.vscode/
+.idea/
+*.iml
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Ignore Build files
+target/
+node_modules/
+
+# Environment files
+.env
+/.metadata/
