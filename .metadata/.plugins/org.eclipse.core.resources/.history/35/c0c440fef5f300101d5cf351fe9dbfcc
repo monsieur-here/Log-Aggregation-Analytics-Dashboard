@@ -1,0 +1,5 @@
+package com.log_analytics.logProcessor.controller;
+
+public class LogController {
+
+}

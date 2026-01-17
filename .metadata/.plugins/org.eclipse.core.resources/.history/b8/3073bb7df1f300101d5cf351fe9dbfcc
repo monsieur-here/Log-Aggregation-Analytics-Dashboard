@@ -1,0 +1,28 @@
+package com.log_analytics.logProcessor.service;
+
+import java.time.LocalDateTime;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity 				// ---- A proper way to use this to store persistently the log data ----
+@Table(name = "log_management")
+public class LogEntryDetails {
+	
+	private long user_id;	// User that generated the log
+	
+	@Id
+	private long log_id;	 
+	
+	private Integer severity; // Type of the log
+
+	private String message;	// Actual log message
+	private long message_number; // Categorize the specific type of message
+	
+	private LocalDateTime timestamp; // Occurrence of log message and other details
+	
+	protected void onCreate() { 
+		this.timestamp = LocalDateTime.now(); 
+	}
+}
