@@ -1,6 +1,6 @@
-# LogPulse: Real-Time Log Aggregation Dashboard
+# Log-Management-System: Real-Time Log Aggregation Analytics Dashboard
 
-Currently this is a full-stack log monitoring solution designed to collect, process, and store system activities. This project demonstrates a complete data pipeline from a Spring Boot backend to a modern React frontend.
+Currently this is a full-stack log monitoring solution designed to collect, process, and store system activities. This project demonstrates a complete data pipeline from a Spring Boot backend to a modern React frontend planning to be scaled up further with improving application architectures.
 
 ## 🏛️ System Architecture
 This project implements the standard log-management cycle as follows :
