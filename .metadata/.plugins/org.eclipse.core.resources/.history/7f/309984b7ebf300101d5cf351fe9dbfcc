@@ -1,5 +1,0 @@
-package com.log_analytics.logProcessor.repository;
-
-public interface LogRepository {
-
-}

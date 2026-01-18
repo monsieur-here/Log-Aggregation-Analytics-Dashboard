@@ -1,5 +1,0 @@
-package com.log_analytics.logProcessor.service;
-
-public class LogEntryDetails {
-
-}

@@ -11,3 +11,5 @@ frontend/dist
 # Docker and OS
 .DS_Store
 .env
+
+.metadata/
