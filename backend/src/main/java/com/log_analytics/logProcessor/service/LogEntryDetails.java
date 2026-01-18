@@ -28,6 +28,8 @@ public class LogEntryDetails {
 	
 	private LocalDateTime timestamp; // Occurrence of log message and other details
 	
+	private String buildVersion; // Essential for different application build versions
+	
 	@PrePersist // Handles automatic timestamps
 	protected void onCreate() { 
 		this.timestamp = LocalDateTime.now(); 
@@ -79,5 +81,13 @@ public class LogEntryDetails {
 
 	public void setTimestamp(LocalDateTime timestamp) {
 		this.timestamp = timestamp;
+	}
+
+	public String getBuildVersion() {
+		return buildVersion;
+	}
+
+	public void setBuildVersion(String buildVersion) {
+		this.buildVersion = buildVersion;
 	}
 }
