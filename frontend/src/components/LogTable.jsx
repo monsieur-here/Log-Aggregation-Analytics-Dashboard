@@ -4,6 +4,17 @@ function LogTable({ logs }) {
 
   if(!logs) return null;
 
+  const getSeverityStyle = (severity) => {
+    switch(severity) {
+        case 1: return 'bg-blue-100 text-blue-800 border-blue-200';
+        case 2: return 'bg-emerald-100 text-emerald-800 border-emerald-200';
+        case 3: return 'bg-yellow-100 text-yellow-800 border-yellow-200';
+        case 4: return 'bg-orange-100 text-orange-800 border-orange-200';
+        case 5: return 'bg-red-100 text-red-800 border-red-200';
+        default: return 'bg-gray-100 text-gray-800 border-gray-200';
+    }
+ }
+
   return (
     <div className="flex flex-col mt-4">
         <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -35,10 +46,8 @@ function LogTable({ logs }) {
                                 logs.map((log) => (
                                     <tr key={log.log_id} className="border-b border-gray-800 hover:bg-gray-800/50">
                                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                            <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${ 
-                                                log.severity === 'ERROR' ? 'bg-red-100 text-red-800' : 
-                                                log.severity === 'WARN' ? 'bg-yellow-100 text-yellow-800' : 
-                                                                          'bg-green-100 text-green-800'}`}>
+                                            <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border
+                                                ${getSeverityStyle(log.severity)}`}>
                                                 {log.severity}
                                             </span>
                                         </td>
