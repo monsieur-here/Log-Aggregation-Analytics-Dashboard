@@ -1,4 +1,4 @@
-package com.log_analytics.logProcessor.controller;
+package com.log_analytics.Log_Aggregation.controller;
 
 import java.util.List;
 
@@ -13,23 +13,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.log_analytics.logProcessor.LogAggregationApplication;
-import com.log_analytics.logProcessor.repository.LogRepository;
-import com.log_analytics.logProcessor.service.LogEntryDetails;
+import com.log_analytics.Log_Aggregation.LogAggregationApplication;
+import com.log_analytics.Log_Aggregation.repository.LogRepository;
+import com.log_analytics.Log_Aggregation.service.LogEntryDetails;
 
 @RestController
 @RequestMapping("/api/logs")
 @CrossOrigin(origins = "http://localhost:5173/")
 public class LogController {
 
-    private final LogAggregationApplication logAggregationApplication;
 	
 	@Autowired
 	private LogRepository logrepo;
-
-    LogController(LogAggregationApplication logAggregationApplication) {
-        this.logAggregationApplication = logAggregationApplication;
-    }
 	
 	// Perform POST request to send logs to the dashboard
 	@PostMapping

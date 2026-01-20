@@ -1,9 +1,9 @@
-package com.log_analytics.logProcessor.repository;
+package com.log_analytics.Log_Aggregation.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.log_analytics.logProcessor.service.LogEntryDetails;
+import com.log_analytics.Log_Aggregation.service.LogEntryDetails;
 
 @Repository	
 // Handle different types of data using an extended generic interface without rewriting the logic for each project

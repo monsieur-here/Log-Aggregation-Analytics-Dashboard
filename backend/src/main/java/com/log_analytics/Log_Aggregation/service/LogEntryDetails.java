@@ -1,4 +1,4 @@
-package com.log_analytics.logProcessor.service;
+package com.log_analytics.Log_Aggregation.service;
 
 import java.time.LocalDateTime;
 
