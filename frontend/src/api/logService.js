@@ -29,7 +29,7 @@ const logService = {
         }
     },
 
-    getLogs: async () => {
+    getAllLogs: async () => {
         try{
             const res = await logApiClient.get("/logs");
             return res.data;

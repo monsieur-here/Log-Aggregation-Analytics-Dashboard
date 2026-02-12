@@ -1,21 +1,21 @@
-// import { StrictMode } from 'react'
-// import { createRoot } from 'react-dom/client'
-// import './index.css'
-// import App from './App.jsx'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
 
-import logService from './api/logService';
+// import logService from './api/logService';
 
-logService.getLogs()
-.then(logs => console.log("Successful connection", logs))
-.catch(err => console.error("Cross Origin Connection Failed", err));
+// logService.getLogs()
+// .then(logs => console.log("Successful connection", logs))
+// .catch(err => console.error("Cross Origin Connection Failed", err));
 
-// createRoot(document.getElementById('root')).render(
-//   <StrictMode>
-//     <App />
-//   </StrictMode>,
-// )
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+)
 
-// Testing Basic Log-Tracking Build
+/* Testing Basic Log-Tracking Build */
 
 // const testNewBuildLog = async () => {
 //   const newLog = {
