@@ -15,6 +15,37 @@ function LogTable({ logs }) {
     }
  }
 
+ const formatRelativeTime = (date) => {
+    const now = new Date();
+    const loggedTime = new Date(date);
+
+    const secondsTime = Math.floor((now - loggedTime) / 1000);
+    if (secondsTime < 60) 
+        return `${secondsTime} seconds ago`;
+
+    const minutesTime = Math.floor(secondsTime / 60);
+    if (minutesTime < 60)
+        return `${minutesTime} minutes ago`;
+
+    const hoursTime = Math.floor(minutesTime / 60);
+    if (hoursTime < 24)
+        return `${hoursTime} hours ago`;
+
+    const daysTime = Math.floor(hoursTime / 24);
+    if (daysTime < 30)
+        return `${daysTime} days ago`;
+
+    // const monthsTime = Math.floor(daysTime / 30);
+    // if (monthsTime < 12)
+    //     return `${monthsTime} months ago`;
+
+    // const yearsTime = Math.floor(monthsTime / 12);
+    // if (yearsTime < 5)
+    //     return `${yearsTime} years ago`;
+
+    return new Date(date).toLocaleDateString();
+ }
+
   return (
     <div className="flex flex-col mt-4">
         <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -61,7 +92,7 @@ function LogTable({ logs }) {
                                         </td>
                                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{log.user_id}</td>
                                         <td className="px-6 py-4 whitespace-nowrap text-sm text-right text-gray-500">
-                                            {new Date(log.timestamp).toLocaleString()}
+                                            {formatRelativeTime(log.timestamp)}
                                         </td>
                                     </tr>
                                 ))
