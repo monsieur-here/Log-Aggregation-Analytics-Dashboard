@@ -10,18 +10,18 @@ services:
     ports:
       - "3306:3306"
 
-    backend:
-      build: ./backend
-      ports:
-        - "8080:8080"
-      depends_on:
-        - db
-      environment:
-        SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/log_analytics-db
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql-db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/log_analytics-db
 
-    frontend:
-      build: ./frontend
-      ports:
-        - "5173:80"
-      depends_on:
-        - backend
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
