@@ -9,14 +9,19 @@ services:
       MYSQL_DATABASE: log_analytics-db
     ports:
       - "3306:3306"
-    volumes:
-      - mysql_data:/var/lib/mysql
-    networks:
-      - log-network
 
-networks:
-  log-network:
-    driver: bridge
+    backend:
+      build: ./backend
+      ports:
+        - "8080:8080"
+      depends_on:
+        - db
+      environment:
+        SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/log_analytics-db
 
-volumes:
-  mysql_data:
+    frontend:
+      build: ./frontend
+      ports:
+        - "5173:80"
+      depends_on:
+        - backend
