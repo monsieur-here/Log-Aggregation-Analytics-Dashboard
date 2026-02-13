@@ -74,6 +74,13 @@
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+    		<groupId>org.hibernate.orm</groupId>
+    		<artifactId>hibernate-core</artifactId>
+    		<version>7.1.16.Final</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
