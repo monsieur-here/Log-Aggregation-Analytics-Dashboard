@@ -1,13 +1,16 @@
 # Log-Management-System: Real-Time Log Aggregation Analytics Dashboard
 
-Currently this is a full-stack log monitoring 3-Tier software architecture implemented solution designed to collect, process, and store system activities. This project demonstrates a complete data pipeline from a Spring Boot backend to a modern React frontend planning to be scaled up further with improving application architectures.
+Currently this is a full-stack log monitoring monolithic software architecture implemented solution designed to collect, process, and store system activities. This project demonstrates a complete data pipeline from a Spring Boot backend to a modern React frontend planning to be scaled up further with improving application architectures.
 
 This project is a real-time basic log monitoring dashboard. It has been fully containerized using Docker to ensure environment parity and scalable deployment.
 
 # Current Architecture (Monolith)
 Frontend: React / Tailwind CSS (Vite)
+
 Backend: Java 21 / Spring Boot 3 / Hibernate
+
 Database: MySQL 8.0
+
 Infrastructure: Docker Compose
 
 Access the Dashboard:
@@ -42,15 +45,15 @@ Create a folder structure for backend and frontend
    cd frontend
    npm install
    npm run dev
-
+   ```
 Ensure you have Docker Desktop installed.
 
 To view my work, clone this repository:
 ```
 git clone https://github.com/monsieur-here/Log-Aggregation-Analytics-Dashboard
 ```
+Once your monolith is setup, create dockerfile(or view) on both frontend and backend to register your application builds. Compose it in the main directory which contains a .yml file orchestrating your build.
 
-Once your three tier is setup, create dockerfile on both frontend and backend to register your application builds. Compose it in the main directory which contains a .yml file orchestrating your build.
 This ensures your frontend and backend connection is built without requiring each service to do the heavy work, as now we are encouraging "Write Once, Run Anywhere" with this packaged code. 
 
 Docker containerizes these builds and with adding volumes inside your file, you ensure a Hot Reload is done without worrying about the previous log history getting empty everytime. Then,
@@ -65,10 +68,10 @@ docker compose up                                  # AFTER BEING SURE OF YOUR UP
 ```
 
 # References 
-https://signoz.io/comparisons/log-aggregation-tools/ 
-https://www.ibm.com/docs/en/cmofz/9.5.0?topic=exit-system-log-database-table 
-Thanks to Google Gemini for a better understanding of use cases with folder structures and then performing containerization with Hot Reload👌.
-Love how this GPT criticizes me and pushes me to refer different websites... Because it's important you present your questions properly🤓.
+-https://signoz.io/comparisons/log-aggregation-tools/ 
+-https://www.ibm.com/docs/en/cmofz/9.5.0?topic=exit-system-log-database-table 
+-Thanks to Google Gemini for a better understanding of use cases with folder structures and then performing containerization with Hot Reload👌.
+-Love how this GPT criticizes me and pushes me to refer different websites... Because it's important you present your questions properly🤓.
 
 I recommend you to use VSCode for frontend, SpringToolsSuite for Spring Boot and Postman for API Endpoint Testing.
 
