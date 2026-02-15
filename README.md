@@ -69,8 +69,11 @@ docker compose up                                  # AFTER BEING SURE OF YOUR UP
 
 # References 
 -https://signoz.io/comparisons/log-aggregation-tools/ 
+
 -https://www.ibm.com/docs/en/cmofz/9.5.0?topic=exit-system-log-database-table 
+
 -Thanks to Google Gemini for a better understanding of use cases with folder structures and then performing containerization with Hot Reload👌.
+
 -Love how this GPT criticizes me and pushes me to refer different websites... Because it's important you present your questions properly🤓.
 
 I recommend you to use VSCode for frontend, SpringToolsSuite for Spring Boot and Postman for API Endpoint Testing.
