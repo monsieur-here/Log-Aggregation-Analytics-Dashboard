@@ -1,4 +1,4 @@
-version: '3.8'
+# version: '3.8'
 
 services:
   mysql-db:
@@ -7,6 +7,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: admin
       MYSQL_DATABASE: log_analytics-db
+    volumes:
+      - mysql_data:/var/lib/mysql
     ports:
       - "3306:3306"
 
@@ -18,10 +20,21 @@ services:
       - mysql-db
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/log_analytics-db
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: admin
 
   frontend:
     build: ./frontend
+    # For development, we can mount the source code and node_modules to enable hot reloading
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules # This prevents Docker from overwriting your packages
+    environment:
+      - CHOKIDAR_USEPOLLING=true
     ports:
       - "5173:80"
     depends_on:
       - backend
+
+volumes:
+  mysql_data:
